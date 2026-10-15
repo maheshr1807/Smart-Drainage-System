@@ -1,0 +1,19 @@
+{
+  "name": "YFS201",
+  "author": "Mahesh",
+  "pins": [
+    "VCC",
+    "GND",
+    "OUT"
+  ],
+  "controls": [
+    {
+      "id": "flowRate",
+      "label": "Flow Rate (L/min)",
+      "type": "range",
+      "min": 0,
+      "max": 10,
+      "step": 0.1
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "yl83",
+  "author": "Mahesh",
+  "pins": [
+    "VCC",
+    "GND",
+    "OUT"
+  ],
+  "controls": [
+    {
+      "id": "rainIntensity",
+      "label": "Rain Intensity (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  ]
+}

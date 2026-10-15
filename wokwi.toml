@@ -1,0 +1,12 @@
+[wokwi]
+version = 1
+firmware = '.pio/build/esp32dev/firmware.bin'
+elf = '.pio/build/esp32dev/firmware.elf'
+
+[[chip]]
+name = 'YFS201'
+binary = 'YFS201.chip.wasm'
+
+[[chip]]
+name = 'yl83'
+binary = 'yl83.chip.wasm'

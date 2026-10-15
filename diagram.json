@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "author": "Mahesh",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp1",
+      "top": -172.8,
+      "left": -196.76,
+      "attrs": {}
+    },
+    {
+      "type": "chip-YFS201",
+      "id": "flow1",
+      "top": 471.42,
+      "left": 196.8,
+      "attrs": { "flowRate": "2.5" }
+    },
+    {
+      "type": "chip-yl83",
+      "id": "rain1",
+      "top": 404.22,
+      "left": 417.6,
+      "attrs": { "rainIntensity": "20" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra1",
+      "top": -152.1,
+      "left": -23.3,
+      "attrs": { "distance": "20" }
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "mq2",
+      "top": 299.1,
+      "left": 105.6,
+      "rotate": 180,
+      "attrs": { "ppm": "400", "threshold": "4.4" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -444.8,
+      "left": 120.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 94.8,
+      "left": -108.6,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 157.55,
+      "left": -144,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 170.1,
+      "left": -5.1,
+      "rotate": 90,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -152.1,
+      "left": 264.7,
+      "attrs": { "distance": "28" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic2",
+      "top": -152.1,
+      "left": 533.5,
+      "attrs": { "distance": "42" }
+    }
+  ],
+  "connections": [
+    [ "esp1:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp1:RX", "$serialMonitor:TX", "", [] ],
+    [ "flow1:VCC", "esp1:3V3", "red", [] ],
+    [ "flow1:GND", "esp1:GND.1", "black", [] ],
+    [ "flow1:OUT", "esp1:34", "green", [] ],
+    [ "rain1:VCC", "esp1:3V3", "red", [] ],
+    [ "rain1:GND", "esp1:GND.1", "black", [] ],
+    [ "rain1:OUT", "esp1:35", "green", [] ],
+    [ "ultra1:VCC", "esp1:5V", "red", [ "v48", "h-528.15" ] ],
+    [ "ultra1:GND", "esp1:GND.1", "black", [ "v9.6", "h-558.15" ] ],
+    [ "ultra1:TRIG", "esp1:5", "green", [ "h-144.4", "v-19.2" ] ],
+    [ "ultra1:ECHO", "esp1:18", "green", [ "v19.2", "h-144.8", "v-28.8" ] ],
+    [ "mq2:VCC", "esp1:5V", "red", [] ],
+    [ "mq2:GND", "esp1:GND.1", "black", [] ],
+    [ "mq2:AOUT", "esp1:32", "green", [] ],
+    [ "mq2:DOUT", "esp1:33", "green", [] ],
+    [ "lcd1:VCC", "esp1:5V", "red", [] ],
+    [ "lcd1:GND", "esp1:GND.1", "black", [] ],
+    [ "lcd1:SDA", "esp1:21", "green", [] ],
+    [ "lcd1:SCL", "esp1:22", "green", [] ],
+    [ "esp1:25", "r1:1", "green", [ "h-28.65", "v307.2" ] ],
+    [ "r1:2", "led1:A", "green", [] ],
+    [ "led1:C", "esp1:GND.1", "black", [] ],
+    [ "bz1:1", "esp1:GND.1", "black", [] ],
+    [ "bz1:2", "esp1:26", "green", [] ],
+    [ "ultrasonic1:VCC", "esp1:5V", "red", [ "v0" ] ],
+    [ "esp1:5V", "ultrasonic2:VCC", "red", [ "h796.95", "v-86.4" ] ],
+    [ "esp1:GND.1", "ultrasonic1:GND", "black", [ "h0" ] ],
+    [ "esp1:GND.1", "ultrasonic2:GND", "black", [ "v19.2", "h836.55" ] ],
+    [ "esp1:16", "ultrasonic1:TRIG", "green", [ "h9.6", "v9.6", "h442" ] ],
+    [ "esp1:17", "ultrasonic1:ECHO", "green", [ "v57.6", "h461.6" ] ],
+    [ "esp1:23", "ultrasonic2:ECHO", "green", [ "v172.8", "h720.8" ] ],
+    [ "esp1:19", "ultrasonic2:TRIG", "green", [ "v134.4", "h710.4", "v-115.2" ] ]
+  ],
+    "dependencies": {},
+  "serialMonitor": {
+    "display": "always"
+  }
+
+}
